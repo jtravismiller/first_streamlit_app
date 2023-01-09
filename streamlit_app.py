@@ -1,6 +1,5 @@
 import streamlit
 import pandas;
-import requests;
 
 streamlit.title('My Parents New Healthy Diner')
 
@@ -23,8 +22,8 @@ streamlit.dataframe(fruits_to_show)
 #New Section to display fruityice api response
 streamlit.header("Fruityvice Fruit Advice!")
 
-fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
-streamlit.text(fruityvice_response.json())
+import requests;
+fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + kiwi")
 
 # Normalize the data into a pandas dataframe
 fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
